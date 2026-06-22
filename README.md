@@ -87,3 +87,7 @@ Patients were stratified into High‑Risk and Low‑Risk groups using median pre
 
 Constraining the network to preserve gene‑expression geometry prevents overfitting and yields more reliable long‑term survival predictions.  
 This demonstrates that multi‑task learning provides meaningful clinical advantages over isolated Cox optimization.
+
+<my last line>
+
+
