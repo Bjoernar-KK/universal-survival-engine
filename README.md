@@ -7,9 +7,15 @@ Deep multi-task survival engine combining Denoising Autoencoders with structural
 
 
 
-\[
-\mathcal{L}_{\text{total}} = 1.0 \cdot \mathcal{L}_{\text{Cox}} + 1.2 \cdot \left(\mathcal{L}_{\text{MSE}} + 0.5 \cdot \mathcal{L}_{\text{Cosine}}\right)
-\]
+$$
+\mathcal{L}_{\text{total}}
+= 1.0 \cdot \mathcal{L}_{\text{Cox}}
++ 1.2 \cdot \left(
+\mathcal{L}_{\text{MSE}}
++ 0.5 \cdot \mathcal{L}_{\text{Cosine}}
+\right)
+$$
+
 
 
 
