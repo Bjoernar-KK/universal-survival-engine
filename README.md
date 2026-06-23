@@ -73,3 +73,21 @@ Stage 0 (Raw Floor) → Stage 1 & 2 (Latent Bottleneck) → Stage 3 (Downstream 
 The framework employs a intentional, dual-tier embedding compression strategy optimized for architectural complexity and cohort size constraints:
 * **Statistical Compression (Stages 1–3):** Uses a **128-dimensional** bottleneck to capture broad variance configurations from unconstrained, flat genomic matrices where no architectural prior information is present.
 * **Topological Compression (Stages 4–5):** Scales down to a compressed **64-dimensional** structural space. Because the GCN explicitly restricts node interactions to validated, structured biological pathways (e.g., Apoptosis, DNA Repair), the noise floor is drastically reduced. Halving the latent space to 64 dimensions prevents over-parameterization, acts as structural regularization, and directly guards the model against memorization on small clinical event partitions ($n=126$).
+
+## 📥 Data Acquisition & Setup
+
+This repository uses public, open-access datasets from the **TCGA Low-Grade Glioma (TCGA-LGG)** cohort. To reproduce the results, download the required raw data from the [UCSC Xena Functional Genomics Explorer](https://xenabrowser.net/datapages/):
+
+1. **Transcriptomics Vector:** Download the RNA-seq expression matrix (`TCGA-LGG.star_fpkm.tsv`) from the UCSC Xena TCGA Hub.
+2. **Clinical Survival Outomes:** Download the curated survival endpoints (`TCGA-LGG.survival.tsv`) from the same hub.
+
+### ⚙️ Quickstart Data Configuration
+Once downloaded, place your raw files into your local directory structure matching the definitions inside your `config.yaml`:
+
+```bash
+# Create the local data directory structure
+mkdir -p data/raw data/processed checkpoints results/figures
+
+# Move your downloaded Xena files into the raw directory
+mv TCGA-LGG.star_fpkm.tsv data/raw/
+mv TCGA-LGG.survival.tsv data/raw/
