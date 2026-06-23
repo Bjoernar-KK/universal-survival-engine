@@ -20,14 +20,15 @@ This engine is engineered around two strict principles:
 
 The engine is structured as a continuous data-refinement pipeline. Each stage introduces a precise technical constraint that builds an empirical ladder toward optimal, un-leaked prognostic evaluation:
 
-`Stage 0 (Raw Floor)` ➔ `Stage 1 & 2 (Latent Bottleneck)` ➔ `Stage 3 (Downstream Audit)` ➔ `Stage 4 (Graph Topology)` ➔ `Stage 5 (Production Audit)`
+Stage 0 (Raw Floor) → Stage 1 & 2 (Latent Bottleneck) → Stage 3 (Downstream Audit) → Stage 4 (Graph Topology) → Stage 5 (Production Audit)
+
+
 
 * **Stage 0** establishes the baseline performance floor using uncompressed raw data.
 * **Stages 1 & 2** act as the mathematical processor, stripping out technical noise and projecting features into a decoupled latent space.
 * **Stage 3** isolates and tests the continuous embeddings to prove whether compression preserved or enhanced the prognostic signal.
 * **Stage 4** advances the proven embeddings by wrapping them in structured, prior biological graph constraints.
 * **Stage 5** executes the ultimate defensive QA gate, running permutation audits to guarantee absolute insulation before deploying the portable clinical estimator.
-
 
 ---
 
@@ -64,3 +65,11 @@ The engine is structured as a continuous data-refinement pipeline. Each stage in
 * **Zero Hard-Coding:** All hyperparameters, network layers, binned time intervals, path resolutions, and architectural configurations are injected dynamically at runtime via a centralized `config.yaml`.
 * **OS-Agnostic File Management:** Built using `pathlib` for absolute compatibility across cross-platform execution environments.
 * **Environment Anchoring:** Forced deterministic random seeds across PyTorch, NumPy, and system states, with non-deterministic backend optimizations strictly disabled (`torch.backends.cudnn.benchmark = False`).
+
+---
+
+## 📐 Dynamic Latent Space Scaling (128D ➔ 64D Justification)
+
+The framework employs a intentional, dual-tier embedding compression strategy optimized for architectural complexity and cohort size constraints:
+* **Statistical Compression (Stages 1–3):** Uses a **128-dimensional** bottleneck to capture broad variance configurations from unconstrained, flat genomic matrices where no architectural prior information is present.
+* **Topological Compression (Stages 4–5):** Scales down to a compressed **64-dimensional** structural space. Because the GCN explicitly restricts node interactions to validated, structured biological pathways (e.g., Apoptosis, DNA Repair), the noise floor is drastically reduced. Halving the latent space to 64 dimensions prevents over-parameterization, acts as structural regularization, and directly guards the model against memorization on small clinical event partitions ($n=126$).
